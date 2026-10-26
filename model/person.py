@@ -1,4 +1,4 @@
-#اعتبار سنجی ام اضافه کن بعد
+from tools.validation import *
 
 class Person :
     def __init__(self , name , family , national_id , phone ):
@@ -13,7 +13,7 @@ class Person :
 
     @name.setter
     def name(self, name):
-        #Validator.name_validator(name)
+        Validator.name_validator(name)
         self.__name = name
 
     @property
@@ -22,7 +22,7 @@ class Person :
 
     @family.setter
     def family(self , family):
-        # Validator.family_validator(family)
+        Validator.family_validator(family)
         self.__family = family
 
     @property
@@ -31,7 +31,7 @@ class Person :
 
     @national_id.setter
     def national_id(self , national_id):
-        # Validator.national_id_validator(national_id)
+        #Validator.national_id_validator(national_id)
         self.__national_id = national_id
 
     @property
@@ -40,7 +40,7 @@ class Person :
 
     @phone.setter
     def phone(self , phone):
-        # Validator.phone_validator(phone)
+        #Validator.phone_validator(phone)
         self.__phone = phone
 
     def __repr__(self):
