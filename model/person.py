@@ -42,3 +42,6 @@ class Person :
     def phone(self , phone):
         # Validator.phone_validator(phone)
         self.__phone = phone
+
+    def __repr__(self):
+        return f"Person(name = {self.name} , family = {self.family} , natinal_id = {self.national_id} , phone = {self.phone})"
