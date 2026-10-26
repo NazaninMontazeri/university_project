@@ -31,7 +31,7 @@ class Person :
 
     @national_id.setter
     def national_id(self , national_id):
-        #Validator.national_id_validator(national_id)
+        Validator.national_id_validator(national_id)
         self.__national_id = national_id
 
     @property
@@ -40,7 +40,7 @@ class Person :
 
     @phone.setter
     def phone(self , phone):
-        #Validator.phone_validator(phone)
+        Validator.phone_validator(phone)
         self.__phone = phone
 
     def __repr__(self):
