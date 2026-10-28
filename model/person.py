@@ -44,7 +44,7 @@ class Person :
         self.__phone = phone
 
     def __repr__(self):
-        return f"Person(name = {self.name} , family = {self.family} , natinal_id = {self.national_id} , phone = {self.phone})"
+        return f"Person(name = {self.name} , family = {self.family} , national_id = {self.national_id} , phone = {self.phone})"
 
     def to_tuple(self):
         return (self.name , self.family , self.national_id , self.phone)
