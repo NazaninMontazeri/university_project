@@ -1,4 +1,5 @@
 from model.person import Person
+from tools.validation import *
 
 class Professor(Person) :
     def __init__(self , name, family, national_id, phone, salary , professor_id , lesson_list):
@@ -14,12 +15,12 @@ class Professor(Person) :
 
         @salary.setter
         def salary(self , salary):
-            #validator.salary_validator(salary)
+            Validator.salary_validator(salary)
             self.__salary = salary
 
         @property
         def professor_id(self):
-            return self.__salary
+            return self.__professor_id
 
         @professor_id.setter
         def professor_id(self, professor_id):
