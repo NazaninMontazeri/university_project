@@ -21,3 +21,10 @@ class Validator:
     def phone_validator(phone):
         if not isinstance(phone , str) or not re.match(r"^[0-9]{11}$" , phone):
             raise ValueError("Invalid Phone")
+
+    @staticmethod
+    def salary_validetor(salary):
+        if not isinstance(salary , (int , float)) :
+            raise ValueError("Invalid salary")
+        if salary < 0 :
+            raise ValueError("Salary cannot be negative.")
