@@ -33,3 +33,12 @@ class Validator:
     def professor_id_validator(professor_id):
         if not isinstance(professor_id , int) :
             raise ValueError("Invalid professor id")
+        if professor_id < 0:
+            raise ValueError("Professor id cannot be negative.")
+
+    @staticmethod
+    def lesson_list_validator(lesson_list):
+        if not isinstance(lesson_list , list):
+            raise ValueError("Invalid lesson list")
+        if len(lesson_list) == 0 :
+            raise ValueError("A professor must have at least one lesson.")
