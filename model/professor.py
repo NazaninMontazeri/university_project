@@ -24,7 +24,7 @@ class Professor(Person) :
 
     @professor_id.setter
     def professor_id(self, professor_id):
-        #validator.professor_id_validator(professor_id)
+        Validator.professor_id_validator(professor_id)
         self.__professor_id = professor_id
 
     @property
@@ -33,7 +33,7 @@ class Professor(Person) :
 
     @lesson_list.setter
     def lesson_list(self, lesson_list):
-        # validator.lesson_list_validator(lesson_list)
+        Validator.lesson_list_validator(lesson_list)
         self.__lesson_list = lesson_list
 
     def __repr__(self):
