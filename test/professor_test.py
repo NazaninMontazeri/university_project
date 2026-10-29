@@ -21,3 +21,10 @@ from tools.validation import *
 #print(pro1)
 #pro1 = Professor("ali", "Ahmadi", "0012345678", "09120000000", 20, 40329, ["math", "sci"])
 #print(pro1)
+
+#test passed
+#pro1 = Professor("ali", "Ahmadi", "0012345678", "09120000000", 20, 40329, ["math", "sci"])
+#pro1 = Professor("ali", "Ahmadi", "0012345678", "09120000000", 20, 40329, [])
+#pro1 = Professor("ali", "Ahmadi", "0012345678", "09120000000", 20, 40329, [12344, "sci"])
+#pro1 = Professor("ali", "Ahmadi", "0012345678", "09120000000", 20, 40329, ["sci"])
+#print(pro1)
