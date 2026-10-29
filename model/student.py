@@ -11,3 +11,6 @@ class Student(Person) :
     def __repr__(self):
         person_info = super().__repr__()
         return f"{person_info} |Student(student_id = {self.student_id} , fied_of_study = {self.fied_of_study} , selected_lessons = {self.selected_lessons})"
+
+    def to_tuple(self):
+        
