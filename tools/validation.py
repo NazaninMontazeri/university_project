@@ -28,3 +28,8 @@ class Validator:
             raise ValueError("Invalid salary")
         if salary < 0 :
             raise ValueError("Salary cannot be negative.")
+
+    @staticmethod
+    def professor_id_validator(professor_id):
+        if not isinstance(professor_id , int) :
+            raise ValueError("Invalid professor id")
