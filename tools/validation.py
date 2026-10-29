@@ -23,7 +23,7 @@ class Validator:
             raise ValueError("Invalid Phone")
 
     @staticmethod
-    def salary_validetor(salary):
+    def salary_validator(salary):
         if not isinstance(salary , (int , float)) :
             raise ValueError("Invalid salary")
         if salary < 0 :
