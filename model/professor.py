@@ -9,32 +9,32 @@ class Professor(Person) :
         self.professor_id = professor_id
         self.lesson_list = lesson_list
 
-        @property
-        def salary(self):
-            return self.__salary
+    @property
+    def salary(self):
+        return self.__salary
 
-        @salary.setter
-        def salary(self , salary):
-            Validator.salary_validator(salary)
-            self.__salary = salary
+    @salary.setter
+    def salary(self , salary):
+        Validator.salary_validator(salary)
+        self.__salary = salary
 
-        @property
-        def professor_id(self):
-            return self.__professor_id
+    @property
+    def professor_id(self):
+        return self.__professor_id
 
-        @professor_id.setter
-        def professor_id(self, professor_id):
-            # validator.professor_id_validator(professor_id)
-            self.__professor_id = professor_id
+    @professor_id.setter
+    def professor_id(self, professor_id):
+        #validator.professor_id_validator(professor_id)
+        self.__professor_id = professor_id
 
-        @property
-        def lesson_list(self):
-            return self.__lesson_list
+    @property
+    def lesson_list(self):
+        return self.__lesson_list
 
-        @lesson_list.setter
-        def lesson_list(self, lesson_list):
-            # validator.lesson_list_validator(lesson_list)
-            self.__lesson_list = lesson_list
+    @lesson_list.setter
+    def lesson_list(self, lesson_list):
+        # validator.lesson_list_validator(lesson_list)
+        self.__lesson_list = lesson_list
 
     def __repr__(self):
 
