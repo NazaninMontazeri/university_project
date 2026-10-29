@@ -42,3 +42,7 @@ class Validator:
             raise ValueError("Invalid lesson list")
         if len(lesson_list) == 0 :
             raise ValueError("A professor must have at least one lesson.")
+
+        for lesson in lesson_list :
+            if not isinstance(lesson , str):
+                raise ValueError(f"Invalid lesson name: {lesson}. Must be a string.")
