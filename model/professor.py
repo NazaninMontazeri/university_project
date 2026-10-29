@@ -1,13 +1,13 @@
 from model.person import Person
-from tools.validation import *
+from tools.validation import Validator
 
 class Professor(Person) :
     def __init__(self , name, family, national_id, phone, salary , professor_id , lesson_list):
+
+        super().__init__(name, family, national_id, phone)
         self.salary = salary
         self.professor_id = professor_id
         self.lesson_list = lesson_list
-
-        super().__init__(name, family, national_id, phone)
 
         @property
         def salary(self):
