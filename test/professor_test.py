@@ -8,6 +8,11 @@ from tools.validation import *
 #pro1.add_lesson("python")
 #print(pro1.to_tuple())
 
-# to do : has Error validator salary
-#pro1 = Professor("ali", "Ahmadi", "0012345678", "09120000000", "salam", "40329", ["math", "sci"])
+#test passed
+#pro1 = Professor("ali", "Ahmadi", "0012345678", "09120000000", 20, "40329", ["math", "sci"])
 #print(pro1)
+#pro2 = Professor("sara", "Ahmadi", "0019999924", "09127778888", -100, "40124", ["physics"])
+#print(pro2)
+
+
+#test
