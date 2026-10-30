@@ -33,8 +33,8 @@ class Validator:
     def professor_id_validator(professor_id):
         if not isinstance(professor_id , int) :
             raise ValueError("Invalid Professor id")
-        if professor_id < 0:
-            raise ValueError("Professor id cannot be negative")
+        if professor_id <= 0:
+            raise ValueError("Professor id cannot be negative or zero")
 
     @staticmethod
     def lesson_validator(lesson):
@@ -45,13 +45,13 @@ class Validator:
     def student_id_validator(student_id):
         if not isinstance(student_id , int) :
             raise ValueError("Invalid Student id")
-        if student_id < 0 :
-            raise ValueError("Student id cannot be negative")
+        if student_id <= 0 :
+            raise ValueError("Student id cannot be negative or zero")
 
     @staticmethod
-    def fied_of_study_validator(fied_of_study):
-        if not isinstance(fied_of_study , str) or not re.match(r"^[a-zA-Z]{2,40}$" , fied_of_study):
-            raise ValueError("Invalid Fied of study")
+    def field_of_study_validator(field_of_study):
+        if not isinstance(field_of_study , str) or not re.match(r"^[a-zA-Z]{2,40}$" , field_of_study):
+            raise ValueError("Invalid Field of study")
 
     @staticmethod
     def name_lesson_validator(name_lesson):
@@ -62,5 +62,12 @@ class Validator:
     def units_validator(units):
         if not isinstance(units , int):
             raise ValueError("Invalid Units")
-        if units < 0:
-            raise ValueError("Units cannot be negative")
+        if units <= 0:
+            raise ValueError("Units cannot be negative or zero")
+
+    @staticmethod
+    def lesson_code_validator(lesson_code):
+        if not isinstance(lesson_code , int) :
+            raise ValueError("Invalid Lesson code")
+        if lesson_code <= 0:
+            raise ValueError("Lesson code cannot be negative or zero")
