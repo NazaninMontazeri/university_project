@@ -2,12 +2,12 @@ from model.person import Person
 from tools.validation import Validator
 
 class Professor(Person) :
-    def __init__(self , name, family, national_id, phone, salary , professor_id , lesson_list):
+    def __init__(self , name, family, national_id, phone, salary , professor_id , lesson):
 
         super().__init__(name, family, national_id, phone)
         self.salary = salary
         self.professor_id = professor_id
-        self.lesson_list = lesson_list
+        self.lesson = lesson
 
     @property
     def salary(self):
@@ -28,26 +28,19 @@ class Professor(Person) :
         self.__professor_id = professor_id
 
     @property
-    def lesson_list(self):
-        return self.__lesson_list
+    def lesson(self):
+        return self.__lesson
 
-    @lesson_list.setter
-    def lesson_list(self, lesson_list):
-        Validator.lesson_list_validator(lesson_list)
-        self.__lesson_list = lesson_list
+    @lesson.setter
+    def lesson(self, lesson):
+        Validator.lesson_validator(lesson)
+        self.__lesson = lesson
 
     def __repr__(self):
 
         person_info = super().__repr__()
 
-        return f"{person_info} |Professor(salary = {self.salary} , professor_id = {self.professor_id} , lesson_list = {self.lesson_list})"
+        return f"{person_info} |Professor(salary = {self.salary} , professor_id = {self.professor_id} , lesson = {self.lesson})"
 
     def to_tuple(self):
-        return super().to_tuple() + (self.salary , self.professor_id , self.lesson_list)
-
-    def add_lesson(self , new_lesson):
-        if new_lesson not in self.lesson_list :
-            self.lesson_list.append(new_lesson)
-            print(f"Lesson {new_lesson} added successfully")
-        else:
-            print(f"Lesson {new_lesson} already exists")
+        return super().to_tuple() + (self.salary , self.professor_id , self.lesson)
