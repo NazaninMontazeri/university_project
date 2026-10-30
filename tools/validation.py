@@ -25,25 +25,30 @@ class Validator:
     @staticmethod
     def salary_validator(salary):
         if not isinstance(salary , (int , float)) :
-            raise ValueError("Invalid salary")
+            raise ValueError("Invalid Salary")
         if salary < 0 :
             raise ValueError("Salary cannot be negative.")
 
     @staticmethod
     def professor_id_validator(professor_id):
         if not isinstance(professor_id , int) :
-            raise ValueError("Invalid professor id")
+            raise ValueError("Invalid Professor id")
         if professor_id < 0:
             raise ValueError("Professor id cannot be negative")
 
     @staticmethod
     def lesson_validator(lesson):
         if not isinstance(lesson , str)  or not re.match(r"^[a-zA-Z]{2,40}$" , lesson):
-            raise ValueError("Invalid lesson")
+            raise ValueError("Invalid Lesson")
 
     @staticmethod
     def student_id_validator(student_id):
         if not isinstance(student_id , int) :
-            raise ValueError("Invalid student id")
+            raise ValueError("Invalid Student id")
         if student_id < 0 :
             raise ValueError("Student id cannot be negative")
+
+    @staticmethod
+    def fied_of_study_validator(fied_of_study):
+        if not isinstance(fied_of_study , str) or not re.match(r"^[a-zA-Z]{2,40}$" , fied_of_study):
+            raise ValueError("Invalid Fied of study")
