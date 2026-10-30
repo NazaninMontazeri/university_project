@@ -30,7 +30,7 @@ class Lesson :
 
     @lesson_code.setter
     def lesson_code(self , lesson_code):
-        #Validator.lesson_code_validator(lesson_code)
+        Validator.lesson_code_validator(lesson_code)
         self.__lesson_code = lesson_code
 
     def __repr__(self):
