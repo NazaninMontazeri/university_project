@@ -1,4 +1,5 @@
 from model.person import Person
+from tools.validation import *
 
 class Student(Person) :
     def __init__(self , name , family , national_id , phone , student_id , fied_of_study  , selected_lesson = None):
@@ -14,7 +15,7 @@ class Student(Person) :
 
     @student_id.setter
     def student_id(self , student_id):
-        #Validator.student_id_validator(student_id)
+        Validator.student_id_validator(student_id)
         self.__student_id = student_id
 
     @property
@@ -33,3 +34,5 @@ class Student(Person) :
     def to_tuple(self) :
         return super().to_tuple() + (self.student_id , self.fied_of_study)
 
+    #def choose_lesson(self):
+    #اول بقیه کلاس هارو بساز بعد بیا اینو کامل کن
