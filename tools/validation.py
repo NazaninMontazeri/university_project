@@ -52,3 +52,15 @@ class Validator:
     def fied_of_study_validator(fied_of_study):
         if not isinstance(fied_of_study , str) or not re.match(r"^[a-zA-Z]{2,40}$" , fied_of_study):
             raise ValueError("Invalid Fied of study")
+
+    @staticmethod
+    def name_lesson_validator(name_lesson):
+        if not isinstance(name_lesson , str) or not re.match(r"^[a-zA-Z]{2,40}$" , name_lesson):
+            raise ValueError("Invalid Name lesson")
+
+    @staticmethod
+    def units_validator(units):
+        if not isinstance(units , int):
+            raise ValueError("Invalid Units")
+        if units < 0:
+            raise ValueError("Units cannot be negative")
