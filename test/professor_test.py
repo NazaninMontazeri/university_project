@@ -19,6 +19,7 @@ from tools.validation import *
 #pro1 = Professor("ali", "Ahmadi", "0012345678", "09120000000", 20, -40329,  "sci")
 #print(pro1)
 #pro1 = Professor("ali", "Ahmadi", "0012345678", "09120000000", 20, 40329, "math")
+#pro1 = Professor("ali", "Ahmadi", "0012345678", "09120000000", 20, 0, "math")
 #print(pro1)
 
 #test passed
