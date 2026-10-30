@@ -24,7 +24,7 @@ class Student(Person) :
 
     @fied_of_study.setter
     def fied_of_study(self , fied_of_study):
-        #Validator.fied_of_study_validator(fied_of_study)
+        Validator.fied_of_study_validator(fied_of_study)
         self.__fied_of_study = fied_of_study
 
     def __repr__(self):
