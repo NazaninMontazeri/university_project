@@ -4,12 +4,12 @@ import re
 class Validator:
     @staticmethod
     def name_validator(name):
-        if not re.match(r"^[a-zA-Z]{2,30}$", name):
+        if not isinstance(name , str) or not re.match(r"^[a-zA-Z]{2,30}$", name):
             raise ValueError("Invalid Name")
 
     @staticmethod
     def family_validator(family):
-        if not re.match(r"^[a-zA-Z]{2,40}$" , family):
+        if not isinstance(family , str) or not re.match(r"^[a-zA-Z]{2,40}$" , family):
             raise ValueError("Invalid Family")
 
     @staticmethod
@@ -37,12 +37,6 @@ class Validator:
             raise ValueError("Professor id cannot be negative.")
 
     @staticmethod
-    def lesson_list_validator(lesson_list):
-        if not isinstance(lesson_list , list):
-            raise ValueError("Invalid lesson list")
-        if len(lesson_list) == 0 :
-            raise ValueError("A professor must have at least one lesson.")
-
-        for lesson in lesson_list :
-            if not isinstance(lesson , str):
-                raise ValueError(f"Invalid lesson name: {lesson}. Must be a string.")
+    def lesson_validator(lesson):
+        if not isinstance(lesson , str)  or not re.match(r"^[a-zA-Z]{2,40}$" , lesson):
+            raise ValueError("Invalid lesson")
