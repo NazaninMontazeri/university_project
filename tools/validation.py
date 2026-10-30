@@ -34,9 +34,16 @@ class Validator:
         if not isinstance(professor_id , int) :
             raise ValueError("Invalid professor id")
         if professor_id < 0:
-            raise ValueError("Professor id cannot be negative.")
+            raise ValueError("Professor id cannot be negative")
 
     @staticmethod
     def lesson_validator(lesson):
         if not isinstance(lesson , str)  or not re.match(r"^[a-zA-Z]{2,40}$" , lesson):
             raise ValueError("Invalid lesson")
+
+    @staticmethod
+    def student_id_validator(student_id):
+        if not isinstance(student_id , int) :
+            raise ValueError("Invalid student id")
+        if student_id < 0 :
+            raise ValueError("Student id cannot be negative")
