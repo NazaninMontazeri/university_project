@@ -9,6 +9,7 @@ from model.student import *
 #stu = Student("farnaz" , "farahmandi" , "0087965645" , "09876543567" , "403298329" , "engineer" )
 #stu = Student("farnaz" , "farahmandi" , "0087965645" , "09876543567" , "k" , "engineer" )
 #stu = Student("farnaz" , "farahmandi" , "0087965645" , "09876543567" , -999 , "engineer" )
+#stu = Student("farnaz" , "farahmandi" , "0087965645" , "09876543567" , 0 , "engineer" )
 #print(stu)
 
 #test passed
