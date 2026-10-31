@@ -3,3 +3,4 @@ from test.professor_test import *
 from test.student_test import *
 from test.lesson_test import *
 from test.score_test import *
+from test.select_lesson_test import *
