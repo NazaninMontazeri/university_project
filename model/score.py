@@ -20,7 +20,7 @@ class Score :
 
     @score_value.setter
     def score_value(self , score_value):
-        #Validator.score_value_validator(score_date)
+        Validator.score_value_validator(score_value)
         self.__score_value = score_value
 
     def __repr__(self):
