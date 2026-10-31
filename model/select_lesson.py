@@ -1,11 +1,13 @@
-from model.student import Student
-from  model.professor import Professor
-from  model.lesson import Lesson
 from  model.score import Score
 from tools.validation import*
 
 class SelectLesson :
     def __init__(self , student , professor , lesson ):
+
+        from model.student import Student
+        from model.professor import Professor
+        from model.lesson import Lesson
+
         self.student = student
         self.professor = professor
         self.lesson = lesson
@@ -17,7 +19,7 @@ class SelectLesson :
 
     @score.setter
     def score(self, score_obj):
-        Validator.score_validator(score_obj)
+        Validator.score_validator(self._score)
         self._score = score_obj
 
     def assign_score(self, score_obj):
@@ -30,3 +32,6 @@ class SelectLesson :
                 f"  lesson={self.lesson!r},\n"
                 f"  score={self._score!r}\n"
                 f")")
+
+    def to_tuple(self):
+        return self.student , self.professor , self.lesson , self._score
