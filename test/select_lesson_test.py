@@ -1,4 +1,7 @@
 from model.select_lesson import *
+from model.student import Student
+from model.professor import Professor
+from model.lesson import Lesson
 
 #test passed
 #lesson = Lesson("python" , 4 , 5677)
@@ -17,7 +20,7 @@ from model.select_lesson import *
 #select_lesson1 = SelectLesson(student , professor , lesson )
 #select_lesson1.assign_score(score)
 #print(select_lesson1)
-
+#print(select_lesson1.to_tuple())
 
 #test passed
 #lesson = Lesson("python" , 4 , 5677)
