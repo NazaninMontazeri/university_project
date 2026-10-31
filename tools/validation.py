@@ -1,5 +1,5 @@
 import re
-
+from datetime import datetime
 
 class Validator:
     @staticmethod
@@ -71,3 +71,13 @@ class Validator:
             raise ValueError("Invalid Lesson code")
         if lesson_code <= 0:
             raise ValueError("Lesson code cannot be negative or zero")
+
+    @staticmethod
+    def score_date_validator(score_date):
+        if not isinstance(score_date , str):
+            raise ValueError("Invalid Score date")
+
+        try:
+            datetime.strptime(score_date, '%Y-%m-%d')
+        except ValueError:
+            raise ValueError(f"Invalid date format: {score_date}. Correct format: YYYY-MM-DD")
