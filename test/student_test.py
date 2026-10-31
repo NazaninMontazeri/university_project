@@ -1,4 +1,8 @@
 from model.student import *
+from model.student import *
+from model.professor import *
+from model.lesson import *
+from model.select_lesson import *
 
 #test passed
 #stu = Student("farnaz" , "farahmandi" , "0087965645" , "09876543567" , 403298329 , "engineer" )
@@ -17,3 +21,14 @@ from model.student import *
 #stu = Student("farnaz" , "farahmandi" , "0087965645" , "09876543567" , 99998765 , "engineer4" )
 #stu = Student("farnaz" , "farahmandi" , "0087965645" , "09876543567" , 99998765 , 678889 )
 #print(stu)
+
+#test passed
+#student = Student("ali", "alipour", "0025467898", "09123456789" ,403298329, "computer")
+#professor = Professor("fati", "fatiil", "0098765432", "09123456789", 40, 98767655, "python")
+
+#lesson1 = Lesson("python", 4, 5677)
+#lesson2 = Lesson("math", 3, 1234)
+#reg1 = SelectLesson(student, professor, lesson1)
+#reg2 = SelectLesson(student, professor, lesson2)
+#student.choose_lesson(reg1)
+#student.choose_lesson(reg2)
