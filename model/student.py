@@ -1,5 +1,9 @@
 from model.person import Person
 from tools.validation import *
+from model.professor import *
+from model.lesson import *
+from model.select_lesson import *
+
 
 class Student(Person) :
     def __init__(self , name , family , national_id , phone , student_id , field_of_study  , selected_lesson = None):
