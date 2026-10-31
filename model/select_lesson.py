@@ -2,6 +2,7 @@ from model.student import Student
 from  model.professor import Professor
 from  model.lesson import Lesson
 from  model.score import Score
+from tools.validation import*
 
 class SelectLesson :
     def __init__(self , student , professor , lesson ):
@@ -16,7 +17,7 @@ class SelectLesson :
 
     @score.setter
     def score(self, score_obj):
-        #Validator.
+        Validator.score_validator(score_obj)
         self._score = score_obj
 
     def assign_score(self, score_obj):
