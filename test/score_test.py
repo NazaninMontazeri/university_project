@@ -21,3 +21,10 @@ from model.score import *
 #score2 = Score("huu" , 40)
 #score2 = Score("huu" , 40)
 #print(score2)
+
+#test passed
+#score3 = Score("2000-12-4" , 40)
+#score3 = Score("2000-12-4" , 4)
+#score3 = Score("2000-12-4" , "4")
+#score3 = Score("2000-12-4" , 7.25)
+#print(score3)
