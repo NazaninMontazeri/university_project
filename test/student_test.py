@@ -1,8 +1,4 @@
 from model.student import *
-from model.student import *
-from model.professor import *
-from model.lesson import *
-from model.select_lesson import *
 
 #test passed
 #stu = Student("farnaz" , "farahmandi" , "0087965645" , "09876543567" , 403298329 , "engineer" )
