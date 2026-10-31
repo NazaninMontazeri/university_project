@@ -94,3 +94,8 @@ class Validator:
     def score_validator(score_obj):
         if score_obj is not None:
             raise ValueError("Score has already been recorded!")
+
+    @staticmethod
+    def choose_lesson_validator(select_lesson_obj):
+        if select_lesson_obj is not None:
+          raise ValueError("You have already selected a lesson! You can only choose one")
