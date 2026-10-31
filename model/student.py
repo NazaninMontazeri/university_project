@@ -34,5 +34,6 @@ class Student(Person) :
     def to_tuple(self) :
         return super().to_tuple() + (self.student_id , self.field_of_study)
 
-    #def choose_lesson(self):
-    #اول بقیه کلاس هارو بساز بعد بیا اینو کامل کن
+    def choose_lesson(self , select_lesson_obj):
+        Validator.choose_lesson_validator(select_lesson_obj)
+        self._selected_lesson = select_lesson_obj
