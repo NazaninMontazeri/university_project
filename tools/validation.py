@@ -81,3 +81,11 @@ class Validator:
             datetime.strptime(score_date, '%Y-%m-%d')
         except ValueError:
             raise ValueError(f"Invalid date format: {score_date}. Correct format: YYYY-MM-DD")
+
+    @staticmethod
+    def score_value_validator(score_value):
+        if not isinstance(score_value, (int, float)):
+            raise ValueError("Invalid Score value")
+
+        if not (0 <= score_value <= 20):
+            raise ValueError(" Score value must be between 0 and 20.")
