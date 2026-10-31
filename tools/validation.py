@@ -89,3 +89,8 @@ class Validator:
 
         if not (0 <= score_value <= 20):
             raise ValueError(" Score value must be between 0 and 20.")
+
+    @staticmethod
+    def score_validator(score_obj):
+        if score_obj is not None:
+            raise ValueError("Score has already been recorded!")
