@@ -26,3 +26,9 @@ class Score :
 
     def to_tuple(self):
         return self.score_date , self.score_value
+
+    def get_result(self):
+        if self.score_value >= 10 :
+             return f"Pass by {self.score_value}"
+        else:
+            return f"Fail by {self.score_value}"
