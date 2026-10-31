@@ -1,3 +1,5 @@
+from tools.validation import *
+
 class Score :
     def __init__(self , score_date , score_value):
         self.score_date = score_date
@@ -9,7 +11,7 @@ class Score :
 
     @score_date.setter
     def score_date(self , score_date):
-        #Validator.score_date_validator(score_date)
+        #Validator.get_result(score_date)
         self.__score_date = score_date
 
     @property
