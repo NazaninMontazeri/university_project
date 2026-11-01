@@ -1,6 +1,7 @@
 from model.student import *
 from data_access.data.student_da import StudentDa
 from business_logic.student_bl import StudentBL
+from controller.student_controller import StudentController
 
 #test passed
 #stu = Student("farnaz" , "farahmandi" , "0087965645" , "09876543567" , 403298329 , "engineer" )
@@ -48,3 +49,9 @@ from business_logic.student_bl import StudentBL
 #bl.save_student(stud1)
 #print("Done")
 #bl.save_student(stud2)
+
+#test passed
+#controller = StudentController()
+#success , message = controller.save_student("reza", "rezaii", "0091265432", "09125556789", 403296328, "computer")
+#print(success)
+#print(message)
