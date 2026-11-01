@@ -1,5 +1,6 @@
 from model.professor import Professor
 from tools.validation import *
+from data_access.data.professor_da import ProfessorDa
 
 #test passed
 #pro1 = Professor("ali", "Ahmadi", "0012345678", "09120000000", 20, 4032998987, "math")
@@ -28,3 +29,11 @@ from tools.validation import *
 #pro1 = Professor("ali", "Ahmadi", "0012345678", "09120000000", 20, 40329, 12344)
 #pro1 = Professor("ali", "Ahmadi", "0012345678", "09120000000", 20, 40329, "sci9")
 #print(pro1)
+
+#test passed
+#pro2 = Professor("ali", "Ahmadi", "0012345678", "09120000000", 20, 40329, "math")
+#print(pro2)
+#pro_da = ProfessorDa()
+#print(pro_da.find_all())
+#pro_da.save(pro2)
+#print(pro_da.find_all())
