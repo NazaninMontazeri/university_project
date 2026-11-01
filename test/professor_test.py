@@ -2,6 +2,7 @@ from model.professor import Professor
 from tools.validation import *
 from data_access.data.professor_da import ProfessorDa
 from business_logic.professor_bl import ProfessorBL
+from controller.professor_controller import ProfessorController
 
 #test passed
 #pro1 = Professor("ali", "Ahmadi", "0012345678", "09120000000", 20, 4032998987, "math")
@@ -49,3 +50,7 @@ from business_logic.professor_bl import ProfessorBL
 #bl.save_professor(pro1)
 #print("Done")
 #bl.save_professor(pro2)
+
+#test Error
+controller = ProfessorController("reza", "rezaii", "0091265432", "09125556789", 80  , 44444444, "math")
+print(controller)
