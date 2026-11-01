@@ -1,6 +1,7 @@
 from model.professor import Professor
 from tools.validation import *
 from data_access.data.professor_da import ProfessorDa
+from business_logic.professor_bl import ProfessorBL
 
 #test passed
 #pro1 = Professor("ali", "Ahmadi", "0012345678", "09120000000", 20, 4032998987, "math")
@@ -37,3 +38,14 @@ from data_access.data.professor_da import ProfessorDa
 #print(pro_da.find_all())
 #pro_da.save(pro2)
 #print(pro_da.find_all())
+
+
+#test passed
+#pro1 = Professor("fati", "fatiil", "0098765432", "09123456789", 40 ,403296328, "python")
+#pro2 = Professor("reza", "rezaii", "0091265432", "09125556789", 80 ,44444444, "math")
+#print(pro1)
+#print(pro2)
+#bl = ProfessorBL()
+#bl.save_professor(pro1)
+#print("Done")
+#bl.save_professor(pro2)
