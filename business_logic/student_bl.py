@@ -6,8 +6,8 @@ class StudentBL:
 
     def save_student(self , student):
         all_students = self.student_da.find_all()
-        for s in all_students:
-            if s.student_id == student.student_id:
+        for existing_student in all_students:
+            if existing_student.student_id == student.student_id:
                 raise ValueError(f"Student ID {student.student_id} already exists!")
         self.student_da.save(student)
         return "Student saved successfully."
