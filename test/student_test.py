@@ -1,4 +1,5 @@
 from model.student import *
+from data_access.data.student_da import StudentDa
 
 #test passed
 #stu = Student("farnaz" , "farahmandi" , "0087965645" , "09876543567" , 403298329 , "engineer" )
@@ -28,3 +29,11 @@ from model.student import *
 #reg2 = SelectLesson(student, professor, lesson2)
 #student.choose_lesson(reg1)
 #student.choose_lesson(reg2)
+
+#test passed
+#studenttt = Student("fati", "fatiil", "0098765432", "09123456789", 40, "engineer", "python")
+#print(studenttt)
+#stu_da = StudentDa()
+#print(stu_da.find_all())
+#stu_da.save(studenttt)
+#print(stu_da.find_all())
