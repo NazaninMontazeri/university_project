@@ -1,4 +1,5 @@
 from model.score import *
+from data_access.data.score_da import ScoreDa
 
 #test passed
 #score1 = Score(87777  , 20)
@@ -28,3 +29,11 @@ from model.score import *
 #score3 = Score("2000-12-4" , "4")
 #score3 = Score("2000-12-4" , 7.25)
 #print(score3)
+
+#test passed
+#scoree = Score("2000-12-4" , 7.25)
+#print(scoree)
+#scoree_da = ScoreDa()
+#print(scoree_da.find_all())
+#scoree_da.save(scoree)
+#print(scoree_da.find_all())
