@@ -1,4 +1,5 @@
 from model.lesson import Lesson
+from data_access.data.lesson_da import LessonDa
 
 #test passed
 #lesson1 = Lesson("math" , 3 , 5674)
@@ -23,3 +24,11 @@ from model.lesson import Lesson
 #lesson1 = Lesson("python" , 4 , 0)
 #lesson1 = Lesson("python" , 4 , "llD")
 #print(lesson1)
+
+#test passed
+#lesson = Lesson("math" , 5 , 87654)
+#print(lesson)
+#les_da = LessonDa()
+#print(les_da.find_all())
+#les_da.save(lesson)
+#print(les_da.find_all())
