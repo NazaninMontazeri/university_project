@@ -1,7 +1,7 @@
 import os
 import pickle
 
-class ProfessorDa:
+class ProfessorDa :
     def __init__(self):
         self.filename = "data_access/data/professor_dat"
         self.professor_list =self.find_all()
