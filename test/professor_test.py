@@ -51,6 +51,8 @@ from controller.professor_controller import ProfessorController
 #print("Done")
 #bl.save_professor(pro2)
 
-#test Error
-controller = ProfessorController("reza", "rezaii", "0091265432", "09125556789", 80  , 44444444, "math")
-print(controller)
+#test passed
+#controller = ProfessorController()
+#success , message =controller.save_professor("reza", "rezaii", "0091265432", "09125556789", 80 ,44444444, "math")
+#print(success)
+#print(message)
