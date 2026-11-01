@@ -2,6 +2,7 @@ from model.select_lesson import *
 from model.student import Student
 from model.professor import Professor
 from model.lesson import Lesson
+from data_access.data.select_lesson_da import SelectLessonDa
 
 #test passed
 #lesson = Lesson("python" , 4 , 5677)
@@ -33,3 +34,17 @@ from model.lesson import Lesson
 #print(select_lesson1)
 #score2 = Score("2024-6-7", 15)
 #select_lesson1.assign_score(score2)
+
+#test passed
+lesson = Lesson("python" , 4 , 5677)
+student = Student("ali" , "alipour" , "0025467898" , "09876542345" , 403298329 , "computer")
+professor = Professor("fati" , "fatiil" , "0098765432" , "09123456789" , 40 ,98767655 , "python")
+score = Score("2024-6-6" , 20)
+
+select_lesson1 = SelectLesson(student , professor , lesson )
+select_lesson1.assign_score(score)
+print(select_lesson1)
+select_lesson1_da = SelectLessonDa()
+#print(select_lesson1_da.find_all())
+select_lesson1_da.save(select_lesson1)
+print(select_lesson1_da.find_all())
