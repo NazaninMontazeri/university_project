@@ -40,4 +40,10 @@ class SelectLessonController:
             return False, f"Registration Failed: {e}"
 
     def submit_score(self , student_id , score_value , score_date):
-        pass
+        try:
+            student = self.find_student_by_id(student_id)
+            if not student:
+                return False , "Student not found"
+
+            if student.selected_lesson is None :
+                return False, "Student has no selected lesson to score!"
