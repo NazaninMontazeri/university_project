@@ -38,3 +38,6 @@ class SelectLessonController:
             return True , "Lesson registered successfully."
         except Exception as e:
             return False, f"Registration Failed: {e}"
+
+    def submit_score(self , student_id , score_value , score_date):
+        pass
