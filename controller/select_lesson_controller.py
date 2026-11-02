@@ -47,3 +47,33 @@ class SelectLessonController:
 
             if student.selected_lesson is None :
                 return False, "Student has no selected lesson to score!"
+            if student.selected_lesson.score is not None:
+                return False, "Business Error: Score has already been recorded!"
+
+            new_score = Score(score_date, score_value)
+            student.selected_lesson.score = new_score
+            self.score_da.save(new_score)
+
+            result = new_score.get_result()
+            return True, f"Score submitted. {result}"
+
+        except Exception as e:
+            return False, f"Score Submission Failed: {e}"
+
+    def find_student_by_id(self, student_id):
+        for s in self.student_da.find_all():
+            if s.student_id == student_id:
+                return s
+        return None
+
+    def find_professor_by_id(self, professor_id):
+        for p in self.professor_da.find_all():
+            if p.professor_id == professor_id:
+                return p
+        return None
+
+    def find_lesson_by_code(self, lesson_code):
+        for l in self.lesson_da.find_all():
+            if l.lesson_code == lesson_code:
+                return l
+        return None
