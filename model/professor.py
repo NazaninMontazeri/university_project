@@ -2,12 +2,12 @@ from model.person import Person
 from tools.validation import Validator
 
 class Professor(Person) :
-    def __init__(self , name, family, national_id, phone, salary , professor_id , lesson):
+    def __init__(self , name, family, national_id, phone, salary , professor_id , professor_lesson):
 
         super().__init__(name, family, national_id, phone)
         self.salary = salary
         self.professor_id = professor_id
-        self.lesson = lesson
+        self.professor_lesson = professor_lesson
 
     @property
     def salary(self):
@@ -28,19 +28,19 @@ class Professor(Person) :
         self.__professor_id = professor_id
 
     @property
-    def lesson(self):
-        return self.__lesson
+    def professor_lesson(self):
+        return self.__professor_lesson
 
-    @lesson.setter
-    def lesson(self, lesson):
-        Validator.lesson_validator(lesson)
-        self.__lesson = lesson
+    @professor_lesson.setter
+    def professor_lesson(self, professor_lesson):
+        Validator.professor_lesson_validator(professor_lesson)
+        self.__professor_lesson = professor_lesson
 
     def __repr__(self):
 
         person_info = super().__repr__()
 
-        return f"{person_info} |Professor(salary = {self.salary} , professor_id = {self.professor_id} , lesson = {self.lesson})"
+        return f"{person_info} |Professor(salary = {self.salary} , professor_id = {self.professor_id} , professor_lesson = {self.professor_lesson})"
 
     def to_tuple(self):
-        return super().to_tuple() + (self.salary , self.professor_id , self.lesson)
+        return super().to_tuple() + (self.salary , self.professor_id , self.professor_lesson)
