@@ -6,7 +6,7 @@ class ScoreController:
     def __init__(self):
         self.score_da = ScoreDa()
 
-    def save(self, score_date, score_value):
+    def save_score(self, score_date, score_value):
         try:
             new_score = Score(score_date, score_value)
             self.score_da.save(new_score)
@@ -14,7 +14,7 @@ class ScoreController:
         except Exception as e:
             return False, f"Error: {e}"
 
-    def find_all(self):
+    def find_all_score(self):
         try:
             scores = self.score_da.find_all()
             return True, scores
