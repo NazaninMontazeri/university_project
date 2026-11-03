@@ -6,6 +6,7 @@ from data_access.data.lesson_da import LessonDa
 from data_access.data.select_lesson_da import SelectLessonDa
 from data_access.data.score_da import ScoreDa
 
+
 class SelectLessonController:
     def __init__(self):
         self.student_da = StudentDa()
@@ -14,75 +15,117 @@ class SelectLessonController:
         self.score_da = ScoreDa()
         self.select_lesson_da = SelectLessonDa()
 
-    def register_lesson(self , student_id , professor_id , lesson_code):
+
+    def register_lesson(self, student_id, professor_id, lesson_code):
         try:
+
+            try:
+                student_id = int(student_id)
+                professor_id = int(professor_id)
+                lesson_code = int(lesson_code)
+            except (ValueError, TypeError):
+                return False, "student_id, professor_id and lesson_code must be integers"
+
+
             student = self.find_student_by_id(student_id)
-            professor = self.find_professor_by_id(professor_id)
-            lesson = self.find_lesson_by_code(lesson_code)
-
             if not student:
-                return False , "Student not found"
+                return False, "Student not found"
 
+            professor = self.find_professor_by_id(professor_id)
             if not professor:
                 return False, "Professor not found"
 
+            lesson = self.find_lesson_by_code(lesson_code)
             if not lesson:
                 return False, "Lesson not found"
+
 
             if student.select_lesson is not None:
                 return False, "Student has already selected a lesson"
 
-            new_reg = SelectLesson(student , professor , lesson)
-            self.select_lesson_da.save(new_reg)
+
+            if professor.professor_lesson != lesson.name_lesson:
+                return False, (
+                    f"Professor does not teach this lesson! "
+                    f"(Professor teaches: '{professor.professor_lesson}', "
+                    f"Lesson is: '{lesson.name_lesson}')"
+                )
+
+
+            new_reg = SelectLesson(student=student , professor=professor , lesson=lesson)
+
 
             student.choose_lesson(new_reg)
 
-            return True , "Lesson registered successfully."
+
+            self.select_lesson_da.save(new_reg)
+
+            return True, "Lesson registered successfully."
+
+        except ValueError as e:
+            return False, f"Validation Error: {e}"
         except Exception as e:
             return False, f"Registration Failed: {e}"
 
-    def submit_score(self , student_id , score_value , score_date):
+
+    def submit_score(self, student_id, score_value, score_date):
         try:
+
+            try:
+                student_id = int(student_id)
+            except (ValueError, TypeError):
+                return False, "student_id must be an integer"
+
+            try:
+                score_value = float(score_value)
+            except (ValueError, TypeError):
+                return False, "score_value must be a number"
+
             student = self.find_student_by_id(student_id)
             if not student:
-                return False , "Student not found"
+                return False, "Student not found"
 
-            if student.select_lesson is None :
+            if student.select_lesson is None:
                 return False, "Student has no selected lesson to score!"
+
             if student.select_lesson.score is not None:
                 return False, "Business Error: Score has already been recorded!"
 
-            new_score = Score(score_date, score_value)
-            student.select_lesson.score = new_score
+            new_score = Score( score_date=score_date , score_value=score_value)
+
+            student.select_lesson.assign_score(new_score)
+
             self.score_da.save(new_score)
 
-            self.select_lesson_da.save(student.select_lesson)
+            self.select_lesson_da.update(student.select_lesson)
 
             result = new_score.get_result()
             return True, f"Score submitted. {result}"
 
+        except ValueError as e:
+            return False, f"Validation Error: {e}"
         except Exception as e:
             return False, f"Score Submission Failed: {e}"
 
+
     def find_student_by_id(self, student_id):
-        found_student = None
+        student = None
         for s in self.student_da.find_all():
             if s.student_id == student_id:
-                found_student = s
+                student = s
                 break
 
-        if not found_student:
+        if not student:
             return None
 
-        if not hasattr(found_student, 'select_lesson'):
-            found_student.select_lesson = None
-
-        for reg in self.select_lesson_da.find_all():
-            if reg.student.student_id == student_id:
-                found_student.select_lesson = reg
+        reg = None
+        for r in self.select_lesson_da.find_all():
+            if getattr(r.student, "student_id", None) == student_id:
+                reg = r
                 break
 
-        return found_student
+        student.select_lesson = reg
+        return student
 
     def find_professor_by_id(self, professor_id):
         for p in self.professor_da.find_all():
