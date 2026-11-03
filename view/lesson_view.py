@@ -1,0 +1,2 @@
+class LessonView:
+    pass
