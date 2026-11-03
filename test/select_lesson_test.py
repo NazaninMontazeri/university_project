@@ -59,14 +59,14 @@ from data_access.data.lesson_da import LessonDa
 
 
 #test ٍpassed
-#lesson = Lesson("python", 4, 5677)
-#student = Student("ali", "alipour", "0025467898", "09876542345", 403298329, "computer")
-#professor = Professor("fati", "fatiil", "0098765432", "09123456789", 40, 98767655, "python")
+# lesson = Lesson("python", 4, 5677)
+# student = Student("ali", "alipour", "0025467898", "09876542345", 403298329, "computer")
+# professor = Professor("fati", "fatiil", "0098765432", "09123456789", 40, 98767655, "python")
 
-#select_lesson1 = SelectLesson(student, professor, lesson)
-#student.choose_lesson(select_lesson1)
+# select_lesson1 = SelectLesson(student, professor, lesson)
+# student.choose_lesson(select_lesson1)
 
-#StudentDa().save(student)
+# StudentDa().save(student)
 # ProfessorDa().save(professor)
 # LessonDa().save(lesson)
 # SelectLessonDa().save(select_lesson1)
