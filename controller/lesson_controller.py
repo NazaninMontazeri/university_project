@@ -5,7 +5,7 @@ class LessonController:
     def __init__(self):
         self.lesson_da = LessonDa()
 
-    def save(self, name_lesson, units, lesson_code):
+    def save_lesson(self, name_lesson, units, lesson_code):
         try:
             new_lesson = Lesson(name_lesson, units, lesson_code)
             self.lesson_da.save(new_lesson)
@@ -13,7 +13,7 @@ class LessonController:
         except Exception as e:
             return False, f"Error: {e}"
 
-    def find_all(self):
+    def find_all_lesson(self):
         try:
             lessons = self.lesson_da.find_all()
             return True, lessons
