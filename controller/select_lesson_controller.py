@@ -138,3 +138,10 @@ class SelectLessonController:
             if l.lesson_code == lesson_code:
                 return l
         return None
+
+    def find_all_select_lesson(self):
+        try:
+            registers = self.select_lesson_da.find_all()
+            return True, registers
+        except Exception as e:
+            return False, f"Error: {e}"
