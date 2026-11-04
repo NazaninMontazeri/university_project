@@ -1,5 +1,6 @@
 from model.score import *
 from data_access.data.score_da import ScoreDa
+from controller.score_controller import ScoreController
 
 #test passed
 #score1 = Score(87777  , 20)
@@ -37,3 +38,9 @@ from data_access.data.score_da import ScoreDa
 #print(scoree_da.find_all())
 #scoree_da.save(scoree)
 #print(scoree_da.find_all())
+
+#test passed
+# controller = ScoreController()
+# success , message =controller.save_score("2024-07-06" , 18)
+# print(success)
+# print(message)
