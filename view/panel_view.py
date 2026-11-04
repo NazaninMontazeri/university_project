@@ -20,7 +20,7 @@ class PanelView:
 
     def __init__(self):
         self.win = Tk()
-        self.win.geometry("600x400")
+        self.win.geometry("300x300")
 
         Button(self.win , text = "Student" , width = 20 , command = self.student_click).place(x = 30 , y = 30)
         Button(self.win , text = "Professor" , width = 20 , command = self.professor_click).place(x = 30 , y = 80)
