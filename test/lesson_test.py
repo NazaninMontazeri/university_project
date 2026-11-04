@@ -1,5 +1,7 @@
 from model.lesson import Lesson
 from data_access.data.lesson_da import LessonDa
+from controller.lesson_controller import LessonController
+
 
 #test passed
 #lesson1 = Lesson("math" , 3 , 5674)
@@ -32,3 +34,10 @@ from data_access.data.lesson_da import LessonDa
 #print(les_da.find_all())
 #les_da.save(lesson)
 #print(les_da.find_all())
+
+
+#test passed
+# controller = LessonController()
+# success , message =controller.save_lesson("math" , 3 , 4545667)
+# print(success)
+# print(message)
